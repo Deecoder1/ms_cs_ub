@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Energy Resources</title>
+        <style>
+            body {
+                background-color: #46d8c4;
+            }
+            div.a {
+                 font-size: 50px;
+                 text-align:center;
+                 background-color: #4CAF50;
+                }
+            div.b {
+                 font-size: 30px;
+                 text-align:center;
+                }
+                .button {
+                    border: none;
+                    color: white;
+                    padding: 15px 32px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    margin: 4px 2px;
+                    cursor: pointer;
+                    background-color: #4CAF50;
+                }
+            
+        </style>
+    </head>
+    <body>
+        <div class="a">List of Author and Co-authors from publications</div>
+        <br><br><br><br<br><br>
+        <div class = "b"><p>The selected author is {{author}}</p></div>
+        <div>
+            <h1>The list of Co authors is below</h1>
+<ul>
+    {% block main %}
+{% for registration in registrations %}
+<li>{{ registration }}</li>
+{% endfor %}
+{% endblock %}
+
+        </div>
+    </body>
+</html>

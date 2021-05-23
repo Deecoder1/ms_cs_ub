@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Energy Resources</title>
+        <style>
+            body {
+                background-color: #46d8c4;
+            }
+            div.a {
+                 font-size: 50px;
+                 text-align:center;
+                 background-color: #4CAF50;
+                }
+            div.b {
+                 font-size: 30px;
+                 text-align:center;
+                }
+                .button {
+                    border: none;
+                    color: white;
+                    padding: 15px 32px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    margin: 4px 2px;
+                    cursor: pointer;
+                    background-color: #4CAF50;
+                }
+            
+        </style>
+    </head>
+    <body>
+        <div class="a">Counting the Co-Occurances of auuthors in Publications</div>
+        <br><br><br>
+        <div class = "b">Introduction About the Data</div>
+            <p>The Data has 2046 Rows in JSON format which gives the details about the title of the publication, the abstract, The Main Author, The Co-authors, The citations, Venue and ID of the presentation </p>
+        <br>
+        <p>Data Source: </p>
+        <a href=" https://lfs.aminer.cn/lab-datasets/citation/dblp.v10.zip">DBLP-Citation-network from aminer.org</a>
+        <p>Using the dataset from the above link we preprocessed the data to fetch only the Main Author and the co authors for each publication and performed the analysis on that</p>
+        <div class = "b"><p> Select any author from the Author list to find the co-authors</p></div>
+    <form method= "post" action = "{{url_for('operation_result')}}" id = "calculator_form">
+        <label for = "colours">Country</label>
+        <select name= colours method="GET" action="/">
+          {% for colour in colours %}
+          <option value= "{{colour}}" SELECTED>{{colour}}</option>"
+          {% endfor %}
+      </select>
+        <br/>
+        <input type = "submit" value = "Submit"/>
+        <input type = "reset" value = "RESET" style = "color: red;"/>
+    </form>
+    </body>
+</html>
